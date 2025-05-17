@@ -17,10 +17,10 @@ spec:
       - name: auth
         image: touatifadwa/bibliotheque-microbooks:latest
         ports:
-        - containerPort: 3002
+        - containerPort: 3003
         env:
         - name: PORT
-          value: "3002"
+          value: "3003"
         - name: JWT_SECRET
           valueFrom:
             secretKeyRef:
@@ -63,6 +63,6 @@ spec:
         readinessProbe:
           httpGet:
             path: /api/health
-            port: 3002
+            port: 3003
           initialDelaySeconds: 30
           periodSeconds: 20

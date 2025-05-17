@@ -6,8 +6,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 3002
-    targetPort: 3002
-    nodePort: 30082
+  - port: 3003
+    targetPort: 3003
+    nodePort: 30083
   selector:
     app: bibliotheque-microbooks
