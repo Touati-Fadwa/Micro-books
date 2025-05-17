@@ -19,7 +19,7 @@ ipeline {
         // Étape 2: Installation des dépendances
         stage('Install Dependencies') {
             steps {
-                dir('Micro-Api-Gateway') {
+                dir('Micro-books') {
                     sh 'npm ci'
                 }
             }
@@ -28,7 +28,7 @@ ipeline {
         // Étape 3: Construction de l'application
         stage('Build') {
             steps {
-                dir('Micro-Api-Gateway') {
+                dir('Micro-books') {
                     sh 'npm run build'
                 }
             }
@@ -37,7 +37,7 @@ ipeline {
         // Étape 4: Exécution des tests
         stage('Run Tests') {
             steps {
-                dir('microservice-auth') {
+                dir('Micro-books') {
                     sh 'npm run test'
                 }
             }
