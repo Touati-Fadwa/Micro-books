@@ -24,7 +24,7 @@ app.get("/api/health", (req, res) => {
 
 
 app.use("/api/categories", categoriesRoutes)
-app.use("/api/books", booksRoutes)
+app.use("/api", booksRoutes)
 app.use("/api/borrowings", borrowingsRoutes)
 
 
