@@ -106,7 +106,7 @@ pipeline {
                         sh '''
                             kubectl apply -f k8s/deployment.yaml -n $KUBE_NAMESPACE
                             kubectl apply -f k8s/service.yaml -n $KUBE_NAMESPACE
-                            kubectl rollout status deployment/bibliotheque-microbooks -n $KUBE_NAMESPACE --timeout=300s
+                            kubectl rollout status deployment/bibliotheque-microbooks -n $KUBE_NAMESPACE --timeout=600s
                         '''
                     }
                 }
