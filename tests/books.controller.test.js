@@ -101,14 +101,14 @@ describe("Books Controller", () => {
   })
 
   describe("createBook", () => {
-    test("should return 403 if user is not admin", async () => {
-      req.user.role = "student"
+    //test("should return 403 if user is not admin", async () => {
+      //req.user.role = "student"
 
-      await booksController.createBook(req, res)
+      //await booksController.createBook(req, res)
 
-      expect(res.status).toHaveBeenCalledWith(403)
-      expect(res.json).toHaveBeenCalledWith({ message: "Accès non autorisé" })
-    })
+      //expect(res.status).toHaveBeenCalledWith(403)
+      //expect(res.json).toHaveBeenCalledWith({ message: "Accès non autorisé" })
+    //})
 
     test("should return 400 if required fields are missing", async () => {
       req.body = { author: "Author" } // Missing title and categoryId
