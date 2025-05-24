@@ -106,9 +106,9 @@ exports.getBookById = async (req, res) => {
 exports.createBook = async (req, res) => {
   try {
     // Check if user is admin
-    if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "Accès non autorisé" })
-    }
+   // if (req.user.role !== "admin") {
+     // return res.status(403).json({ message: "Accès non autorisé" })
+    //}
 
     const { title, author, isbn, publicationYear, publisher, description, coverImage, quantity, categoryId } = req.body
 
@@ -162,9 +162,9 @@ exports.createBook = async (req, res) => {
 exports.updateBook = async (req, res) => {
   try {
     // Check if user is admin
-    if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "Accès non autorisé" })
-    }
+   // if (req.user.role !== "admin") {
+     // return res.status(403).json({ message: "Accès non autorisé" })
+    //}
 
     const { id } = req.params
     const { title, author, isbn, publicationYear, publisher, description, coverImage, quantity, categoryId } = req.body
@@ -229,9 +229,9 @@ exports.updateBook = async (req, res) => {
 exports.deleteBook = async (req, res) => {
   try {
     // Check if user is admin
-    if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "Accès non autorisé" })
-    }
+    //if (req.user.role !== "admin") {
+      //return res.status(403).json({ message: "Accès non autorisé" })
+    //}
 
     const { id } = req.params
 
