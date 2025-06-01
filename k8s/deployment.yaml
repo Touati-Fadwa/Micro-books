@@ -14,7 +14,7 @@ spec:
         app: bibliotheque-microbooks
     spec:
       containers:
-      - name: auth
+      - name: books
         image: touatifadwa/bibliotheque-microbooks:latest
         ports:
         - containerPort: 3003
