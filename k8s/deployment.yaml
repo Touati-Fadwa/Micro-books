@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bibliotheque-microbooks
+  name: bibliotheque-books
   namespace: bibliotheque
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: bibliotheque-microbooks
+      app: bibliotheque-books
   template:
     metadata:
       labels:
-        app: bibliotheque-microbooks
+        app: bibliotheque-books
     spec:
       containers:
       - name: books

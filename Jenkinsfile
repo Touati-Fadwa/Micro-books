@@ -129,8 +129,8 @@ pipeline {
                             kubectl get pods -n $KUBE_NAMESPACE -o wide
                             
                             NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
-                            NODE_PORT=$(kubectl get svc bibliotheque-microbooks-service -n $KUBE_NAMESPACE -o jsonpath='{.spec.ports[0].nodePort}')
-                            echo "\nURL API Gateway: http://$NODE_IP:$NODE_PORT"
+                            NODE_PORT=$(kubectl get svc bibliotheque-books-service -n $KUBE_NAMESPACE -o jsonpath='{.spec.ports[0].nodePort}')
+                            echo "\nURL books: http://$NODE_IP:$NODE_PORT"
                             
                             curl -sSf "http://$NODE_IP:$NODE_PORT/api/health" || echo "Health check failed"
                         '''
@@ -147,7 +147,7 @@ pipeline {
                     sh '''
                         mkdir -p ~/.kube
                         cp "$KUBECONFIG_FILE" ~/.kube/config
-                        kubectl rollout undo deployment/bibliotheque-microbooks -n $KUBE_NAMESPACE || true
+                        kubectl rollout undo deployment/bibliotheque-books -n $KUBE_NAMESPACE || true
                     '''
                 }
             }

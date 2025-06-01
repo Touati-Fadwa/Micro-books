@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bibliotheque-microbooks-service
+  name: bibliotheque-books-service
   namespace: bibliotheque
 spec:
   type: NodePort
@@ -10,4 +10,4 @@ spec:
     targetPort: 3003
     nodePort: 30083
   selector:
-    app: bibliotheque-microbooks
+    app: bibliotheque-books
